@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Core Modern Solutions — Seb Barberena</title>
+  <meta name="description" content="Modernizamos empresas guatemaltecas. Marca, operaciones y sistemas que funcionan sin ti." />
+  <meta property="og:title" content="Core Modern Solutions" />
+  <meta property="og:description" content="Modernizamos empresas. Hablemos." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --blue-bright: #0049E5;
+      --blue-mid: #152B5B;
+      --blue-dark: #03102B;
+      --green: #328200;
+      --gold: #FFDB29;
+      --near-black: #161616;
+      --dark-gray: #303030;
+      --mid-gray: #636363;
+      --light-gray: #969696;
+      --border: #E4E8EF;
+      --bg: #ffffff;
+      --bg-subtle: #F5F7FA;
+      --font: 'Inter', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--near-black);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── TOP BRAND BAND ── */
+    .brand-band {
+      background: radial-gradient(ellipse at 70% 0%, #0049E6 0%, #152B5B 50%, #03102B 100%);
+      padding: 28px 24px 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    .brand-band svg {
+      height: 44px;
+      width: auto;
+    }
+
+    /* ── HERO (white) ── */
+    .hero {
+      background: var(--bg);
+      padding: 44px 24px 40px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--blue-bright);
+      background: rgba(0,73,229,0.07);
+      border: 1px solid rgba(0,73,229,0.15);
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-size: clamp(28px, 7vw, 46px);
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      color: var(--near-black);
+      margin-bottom: 16px;
+    }
+
+    .hero-title .accent {
+      color: var(--blue-bright);
+    }
+
+    .hero-sub {
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--mid-gray);
+      max-width: 380px;
+      margin: 0 auto 32px;
+    }
+
+    .btn-book {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--blue-bright);
+      color: #fff;
+      font-family: var(--font);
+      font-size: 15px;
+      font-weight: 600;
+      padding: 13px 26px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      box-shadow: 0 2px 12px rgba(0,73,229,0.25);
+    }
+
+    .btn-book:hover {
+      background: #003dc2;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(0,73,229,0.35);
+    }
+
+    .btn-book svg { width: 17px; height: 17px; flex-shrink: 0; }
+
+    /* ── SECTIONS ── */
+    .sections {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 12px 20px 56px;
+    }
+
+    .card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 24px;
+      margin-top: 14px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      border-color: rgba(0,73,229,0.3);
+      box-shadow: 0 4px 24px rgba(0,73,229,0.07);
+    }
+
+    .card-num {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--blue-bright);
+      margin-bottom: 8px;
+    }
+
+    .card-q {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--near-black);
+      margin-bottom: 14px;
+      letter-spacing: -0.01em;
+    }
+
+    .card-body {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--dark-gray);
+    }
+
+    .card-body strong {
+      color: var(--near-black);
+      font-weight: 600;
+    }
+
+    .card-body .highlight {
+      color: var(--blue-bright);
+      font-weight: 600;
+    }
+
+    /* Pills */
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .pill {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      color: var(--dark-gray);
+      font-size: 13px;
+      font-weight: 500;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+
+    /* Result grid */
+    .result-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .result-item {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--blue-bright);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+
+    .result-item .r-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue-bright);
+      margin-bottom: 4px;
+    }
+
+    .result-item .r-val {
+      font-size: 13px;
+      color: var(--dark-gray);
+      line-height: 1.45;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--bg-subtle);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 36px 24px 48px;
+    }
+
+    .footer-label {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--near-black);
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+    }
+
+    .footer-sub {
+      font-size: 14px;
+      color: var(--mid-gray);
+      margin-bottom: 24px;
+    }
+
+    .footer-link {
+      display: inline-block;
+      font-size: 13px;
+      color: var(--light-gray);
+      text-decoration: none;
+      margin-top: 20px;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+    .footer-link:hover { color: var(--blue-bright); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 480px) {
+      .result-row { grid-template-columns: 1fr; }
+      .hero { padding: 36px 20px 32px; }
+      .card { padding: 22px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── BRAND BAND (dark strip with logo) ── -->
+  <div class="brand-band">
+    <svg viewBox="0 0 1012 565" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g filter="url(#f0)"><path d="M588.127 285.047H448.18C448.18 129.485 574.303 3.44775 729.781 3.44775V143.395C651.529 143.395 588.127 206.797 588.127 285.047Z" fill="url(#g0)"/></g>
+      <g filter="url(#f1)"><path d="M139.947 277.9H0C0 433.463 128.994 559.891 284.471 559.891V422.994C206.22 422.994 139.947 356.152 139.947 277.9Z" fill="url(#g1)"/></g>
+      <g filter="url(#f2)"><path d="M728.871 564.635V424.688C807.123 424.688 870.525 361.286 870.525 283.034H1010.47C1010.47 438.597 884.348 564.635 728.871 564.635Z" fill="url(#g2)"/></g>
+      <g filter="url(#f3)"><path d="M281.51 0L281.598 139.947C203.347 139.996 139.984 203.438 140.033 281.689L0.0859938 281.776C-0.0113459 126.214 126.033 0.0972713 281.51 0Z" fill="#E0E0E0"/></g>
+      <g filter="url(#f4)"><path d="M729.994 143.399V3.45166C885.557 3.45166 1011.59 129.574 1011.59 285.051H871.648C871.648 206.801 808.244 143.399 729.994 143.399Z" fill="#E0E0E0"/></g>
+      <g filter="url(#f5)"><path d="M284.479 423.059V559.892C455.101 559.892 587.186 436.576 587.186 284.56H448.293C448.293 361.068 370.304 423.059 284.479 423.059Z" fill="#E0E0E0"/></g>
+      <path d="M281.816 140.044V0.097168C345.732 0.097168 391.018 17.1469 438.29 53.0722C410.853 92.7117 391.783 134.055 381.38 175.356C355.78 149.842 320.814 140.129 281.816 140.129V140.044Z" fill="url(#g3)"/>
+      <defs>
+        <filter id="f0" x="448.18" y="-4.55225" width="281.602" height="289.6" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/><feOffset dy="-9"/><feGaussianBlur stdDeviation="4"/><feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/><feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/><feBlend mode="normal" in2="shape" result="effect1_innerShadow_3352_333"/></filter>
+        <filter id="f1" x="0" y="269.9" width="284.471" height="289.99" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/><feOffset dy="-8"/><feGaussianBlur stdDeviation="4"/><feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/><feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/><feBlend mode="normal" in2="shape" result="effect1_innerShadow_3352_333"/></filter>
+        <filter id="f2" x="728.871" y="283.034" width="289.602" height="284.601" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/><feOffset dx="9" dy="3"/><feGaussianBlur stdDeviation="4"/><feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/><feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/><feBlend mode="normal" in2="shape" result="effect1_innerShadow_3352_333"/></filter>
+        <filter id="f3" x="0.0859375" y="0" width="281.512" height="285.776" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/><feOffset dy="4"/><feGaussianBlur stdDeviation="2"/><feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/><feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/><feBlend mode="normal" in2="shape" result="effect1_innerShadow_3352_333"/></filter>
+        <filter id="f4" x="729.994" y="-4.54834" width="281.6" height="289.6" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/><feOffset dy="-8"/><feGaussianBlur stdDeviation="4"/><feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/><feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/><feBlend mode="normal" in2="shape" result="effect1_innerShadow_3352_333"/></filter>
+        <filter id="f5" x="284.479" y="276.56" width="302.707" height="283.332" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/><feOffset dy="-8"/><feGaussianBlur stdDeviation="4"/><feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/><feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/><feBlend mode="normal" in2="shape" result="effect1_innerShadow_3352_333"/></filter>
+        <linearGradient id="g0" x1="448.18" y1="3.44775" x2="448.18" y2="285.047" gradientUnits="userSpaceOnUse"><stop stop-color="#328200"/><stop offset="0.52" stop-color="#213E0F"/><stop offset="1" stop-color="#0A1802"/></linearGradient>
+        <linearGradient id="g1" x1="0" y1="277.9" x2="0" y2="559.891" gradientUnits="userSpaceOnUse"><stop stop-color="#FFDB29"/><stop offset="0.52" stop-color="#BAA22C"/><stop offset="1" stop-color="#766409"/></linearGradient>
+        <linearGradient id="g2" x1="728.871" y1="283.034" x2="728.871" y2="564.635" gradientUnits="userSpaceOnUse"><stop stop-color="#0049E6"/><stop offset="0.52" stop-color="#152B5B"/><stop offset="1" stop-color="#03102B"/></linearGradient>
+        <linearGradient id="g3" x1="281.816" y1="0.097168" x2="281.816" y2="175.356" gradientUnits="userSpaceOnUse"><stop stop-color="#FF2929"/><stop offset="0.52" stop-color="#BA2C2C"/><stop offset="1" stop-color="#470606"/></linearGradient>
+      </defs>
+    </svg>
+  </div>
+
+  <!-- ── HERO (white) ── -->
+  <header class="hero">
+    <span class="hero-tag">Seb Barberena · Core Modern Solutions</span>
+    <h1 class="hero-title">Tu empresa,<br><span class="accent">modernizada.</span></h1>
+    <p class="hero-sub">Transformamos cómo operas, cómo te ves y cómo creces — con sistemas que funcionan sin que estés encima.</p>
+    <button class="btn-book" data-cal-link="coremsgt" data-cal-config='{"layout":"month_view"}'>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Agendar reunión
+    </button>
+  </header>
+
+  <!-- ── CARDS ── -->
+  <main class="sections">
+
+    <div class="card">
+      <p class="card-num">01</p>
+      <h2 class="card-q">¿Qué hacemos en Core?</h2>
+      <p class="card-body">
+        Modernizamos empresas. Trabajamos con dueños que saben que su negocio puede más — pero que operan con procesos manuales, sin marca clara, sin sistemas que escalen.
+        <br><br>
+        Construimos la <strong>infraestructura invisible</strong> que hace que tu empresa funcione, se vea bien y crezca con o sin ti presente.
+      </p>
+      <div class="pill-row">
+        <span class="pill">Marca &amp; Identidad</span>
+        <span class="pill">Operaciones</span>
+        <span class="pill">Automatización</span>
+        <span class="pill">Sistemas de gestión</span>
+        <span class="pill">CRM &amp; Ventas</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <p class="card-num">02</p>
+      <h2 class="card-q">¿Cómo lo hacemos?</h2>
+      <p class="card-body">
+        En tres fases claras, sin sorpresas:
+        <br><br>
+        <strong>Diagnóstico</strong> — Entendemos tu negocio a fondo. Lo que funciona, lo que frena y lo que está costando dinero sin que lo notes.
+        <br><br>
+        <strong>Estrategia</strong> — Un plan concreto con prioridades, tiempos y resultados esperados. Sin humo.
+        <br><br>
+        <strong>Implementación</strong> — Lo construimos contigo. Sistemas, marca, procesos y herramientas integradas que tu equipo realmente usa.
+      </p>
+    </div>
+
+    <div class="card">
+      <p class="card-num">03</p>
+      <h2 class="card-q">¿Qué necesito de ti, siendo empresario?</h2>
+      <p class="card-body">
+        Tres cosas — nada más:
+        <br><br>
+        <strong>Tu visión.</strong> Saber hacia dónde quieres llevar el negocio. No necesitas tenerlo todo claro — para eso estamos.
+        <br><br>
+        <strong>Tu tiempo.</strong> <span class="highlight">2 a 4 horas al mes.</span> Reuniones enfocadas, decisiones ágiles. El resto lo resolvemos nosotros.
+        <br><br>
+        <strong>Tu compromiso.</strong> Mejorar requiere cambiar. Si estás listo para hacer las cosas diferente, construimos algo que dure.
+      </p>
+    </div>
+
+    <div class="card">
+      <p class="card-num">04</p>
+      <h2 class="card-q">¿Qué resultados esperar? ¿Cuál es el compromiso?</h2>
+      <p class="card-body">
+        No vendemos proyectos — construimos relaciones. Cada cliente recibe atención directa, comunicación clara y resultados medibles.
+      </p>
+      <div class="result-row">
+        <div class="result-item">
+          <p class="r-label">Tiempo</p>
+          <p class="r-val">Resultados visibles en los primeros 30 días</p>
+        </div>
+        <div class="result-item">
+          <p class="r-label">Transparencia</p>
+          <p class="r-val">Sabes exactamente en qué fase estamos siempre</p>
+        </div>
+        <div class="result-item">
+          <p class="r-label">Acceso directo</p>
+          <p class="r-val">Hablas con Seb — no con un asistente</p>
+        </div>
+        <div class="result-item">
+          <p class="r-label">Sin sorpresas</p>
+          <p class="r-val">Precio fijo, alcance claro, entrega comprometida</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <p class="footer-label">¿Listo para modernizar tu empresa?</p>
+    <p class="footer-sub">La primera conversación no cuesta nada.</p>
+    <button class="btn-book" data-cal-link="coremsgt" data-cal-config='{"layout":"month_view"}'>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Agendar reunión gratuita
+    </button>
+    <br>
+    <a href="mailto:admin@coremsgt.com" class="footer-link">admin@coremsgt.com</a>
+  </footer>
+
+  <!-- ── CAL.COM EMBED ── -->
+  <script type="text/javascript">
+    (function (C, A, L) {
+      let p = function (a, ar) { a.q.push(ar); };
+      let d = C.document;
+      C.Cal = C.Cal || function () {
+        let cal = C.Cal; let ar = arguments;
+        if (!cal.loaded) {
+          cal.ns = {}; cal.q = cal.q || [];
+          d.head.appendChild(d.createElement("script")).src = A;
+          cal.loaded = true;
+        }
+        if (ar[0] === L) {
+          const api = function () { p(api, arguments); };
+          const namespace = ar[1];
+          api.q = api.q || [];
+          typeof namespace === "string"
+            ? (cal.ns[namespace] = api) && p(api, ar)
+            : p(cal, ar);
+          return;
+        }
+        p(cal, ar);
+      };
+    })(window, "https://app.cal.com/embed/embed.js", "init");
+
+    Cal("init", { origin: "https://cal.com" });
+    Cal("ui", {
+      theme: "light",
+      styles: { branding: { brandColor: "#0049E5" } },
+      hideEventTypeDetails: false,
+    });
+  </script>
+
+</body>
+</html>
